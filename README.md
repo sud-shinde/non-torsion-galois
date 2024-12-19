@@ -12,15 +12,21 @@ CheckGroup2.m : magma scripts for testing
 NF_FF_Gens2.sage : The main sagemath script to compute the field Q(E[f]) and the associated Galois image
 
 Use case:
+
 First in Sage :
+
 %runfile NF_FF_Gens2.sage
 
 sage: mm = MaxExt(-3,-9,2,3) ## f(x) = x^2 + 2*x + 3 and the elliptic curve y^2=x^3-3*x-9. It is taken from Table 2 for group 4.
+
 sage: mm.K.degree() ##gives output 2, the degree of Q(E[f]) over Q
+
 sage: mm.magma_gens ##list of magma genarators, gives [[0, 1, 1, 0]]
 
 Check in Magma :
+
 > load "CheckGroup2.m";
+
 > WhichGroup([[0, 1, 1, 0]]); // should give output 4 for group 4.
 
 
