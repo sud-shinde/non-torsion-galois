@@ -1,13 +1,10 @@
 load "NSUBSG2.m";
 G2 := GL(2, Integers());
-S2 := SL(2, Integers());
 mgns := [[0, -1, 1, 0],
 [-1, 0, 0, -1],
 [0, 1, 1, 0]];
 
 T2 := sub<G2|mgns>;
-
-NSTREE := [];
 
 FlattenMatrix := function(mt)
     return [mt[1][1],mt[1][2],mt[2][1],mt[2][2]];
@@ -37,40 +34,3 @@ WhichGroup := function(gns)
     end for;
 end function;
 
-/*
-
-for i in [1..33] do
-    mi := CreateGroup(i);
-    for ss in [1..33] do
-        if IsConjugate(T3,mi,STREE[ss]) then
-            NSTREE := Append(NSTREE, ss);
-        end if;
-    end for;
-end for;
-
-
-for i in [1..33] do
-    mi := CreateGroup(i);
-    mgi := STREE[NSTREE[i]];
-    assert IsConjugate(T3,mi,mgi);
-end for;
-*/
-
-
-/*
-for i in Reverse([1..33]) do
-    di := dada1[i];
-    mi := Reverse(dada2)[i];
-    dsi := STREE[i];
-    dssi := Subgroups(dsi);
-    for m in mi do
-	msi := STREE[m];
-	    for ss in [1..#dssi] do
-		if IsConjugate(T3, dssi[ss]`subgroup, msi) then
-		    print(<di,mi, m, ss>);
-		end if;
-	    end for;
-    end for;
-end for;
-
-*/
