@@ -23,8 +23,11 @@ def Process(l):
     n1 = prod(thts)
     soln = FindKT(a1, b1, m1, n1)
     #print(soln)
+    con = True
     for s in soln:
-        assert s[0].right_hand_side() in QQ and s[1].right_hand_side() in QQ
-    return True
+        con = con and (s[0].right_hand_side() in QQ and s[1].right_hand_side() in QQ)
+    return con
 
+for l in range(len(lns)):
+    assert Process(l)
 
