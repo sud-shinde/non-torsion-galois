@@ -47,6 +47,10 @@ where d is the degree of a factor of tp and m is the multiplicity of the factor 
 
 
 class MaxExt:
+"""
+Given E defined by y^2=x^3+ax+b and polynomial f(x) = x^2+mx+n, this class defined the relevant objects attached to Q(E[f]).
+"""
+
     def __init__(self, aa,bb,mm,nn):
         try:
             E = EllipticCurve([aa,bb])
@@ -61,7 +65,7 @@ class MaxExt:
         self.div2 = E.division_polynomial(2)/4
         self.deg = poly.degree()
         self.ff = FF(a=aa,b=bb,m=mm,n=nn).polynomial(QQ)
-        self.K = self.ff.splitting_field('aa')
+        self.K = self.ff.splitting_field('aa') ##K is Q(E[f])
         self.GG = self.K.galois_group()
         self.gcurve = self.curve.change_ring(self.K)
         self.rts_on_spp = self.poly.change_ring(self.SPP).roots()
@@ -74,7 +78,7 @@ class MaxExt:
         self.ys = [r.sqrt() for r in self.Y2s]
         ##The line below is not scalable
         pts = [(self.rts[0][0], self.ys[0], 1), (self.rts[1][0], self.ys[1], 1)]
-        self.pts = [self.curve.change_ring(self.K).point(pt) for pt in pts]
+        self.pts = [self.curve.change_ring(self.K).point(pt) for pt in pts] ##Two points (theta_1, mu_1), (theta_2, mu_2) on E over Q(E[f])
         self.factpat = fact_pat(self.ff)
         self.P = self.pts[0]
         self.Q = self.pts[1]
@@ -84,7 +88,7 @@ class MaxExt:
         mg = []
         for g in mtgns:
             mg.append(flatten(g.list()))
-        self.magma_gens = mg
+        self.magma_gens = mg  #magma generators of the Galois group of Q(E[f]) over Q.
     def height_data(self):
         self.height_matrix = self.gcurve.height_pairing_matrix(self.pts)
         self.height_matrix_det = self.height_matrix.determinant()
