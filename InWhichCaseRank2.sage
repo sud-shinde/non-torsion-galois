@@ -4,16 +4,6 @@ lns = ff.readlines()
 ff.close()
 lns = [line[:-1] for line in lns]
 
-def GiveCoeffs(l):
-    E = EllipticCurve(eval(lns[l]))
-    E1 = E.short_weierstrass_model()
-    a1, b1 = E1.ainvs()[3:]
-    gns = E.gens()
-    MP = E.isomorphism_to(E1)
-    thts = [MP(g)[0] for g in gns]
-    m1 = -(sum(thts))
-    n1 = prod(thts)
-    return a1,b1,m1,n1
 
 def FindKT(a1, b1, m1, n1):
     var('k, t')
