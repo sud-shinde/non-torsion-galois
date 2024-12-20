@@ -1,3 +1,4 @@
+#Maple script to parametrize b in Equation 4.1
 E := y^2 + (-x^3 - a*x - b):
 P := x^2 + m*x + n:
 RS := resultant(E, P, x): ##The resultant polynomial
