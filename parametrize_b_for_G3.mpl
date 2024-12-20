@@ -1,3 +1,4 @@
+#Maple script to parametrize b for group G3
 n := (m^2 - delta^2)/4:
 f := m*x + x^2 + n:
 rts := [(-m - delta)/2, (delta - m)/2]:
