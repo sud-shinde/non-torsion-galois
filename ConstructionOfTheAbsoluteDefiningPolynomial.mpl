@@ -1,3 +1,4 @@
+#Maple script to compute the absolute defining polynomial of degree 8 of Q(E[f])
 E := y^2 + (-x^3 - a*x - b):
 P := x^2 + m*x + n:
 alias(theta = RootOf(P, x)): #the second root would be -m-theta
