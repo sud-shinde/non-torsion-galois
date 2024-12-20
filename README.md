@@ -11,6 +11,15 @@ CheckGroup2.m : magma scripts for testing
 
 NF_FF_Gens2.sage : The main sagemath script to compute the field Q(E[f]) and the associated Galois image
 
+RandomChecks.sage: List of all curves and scripts to generate random curves and polynomials for each group
+
+ConstructionOfTheAbsoluteDefiningPolynomial.mpl : maple script to compute the degree 8 defining polynomial of Q(E[f])
+
+parametrize_b.mpl : maple script to parametrize b in Equation 4.1
+
+parametrize_b_for_G3.mpl : maple script to parametrize b for group G3 in Equation 4.4
+
+
 Use case:
 
 First in Sage :
