@@ -56,6 +56,8 @@ Given E defined by y^2=x^3+ax+b and polynomial f(x) = x^2+mx+n, this class defin
             E = EllipticCurve([aa,bb])
         except:
             raise Exception("Unable to define the elliptic curve, may be singular?")
+        if mm^2-4*nn==0:
+            raise Exception("mm^2-4*nn should be different than zero!")
         self.cfs = [aa,bb,mm,nn]
         poly = x**2+mm*x+nn
         poly = poly.polynomial(QQ)
