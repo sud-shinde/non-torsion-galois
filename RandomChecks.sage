@@ -16,7 +16,7 @@ class MaxExt:
         except:
             raise Exception("Unable to define the elliptic curve, may be singular?")
         if mm^2-4*nn==0:
-            raise Exception("m1^2-4*n should be different than zero!")
+            raise Exception("mm^2-4*nn should be different than zero!")
         poly = x**2+mm*x+nn
         poly = poly.polynomial(QQ)
         self.curve = E
