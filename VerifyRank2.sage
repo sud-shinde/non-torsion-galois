@@ -1,4 +1,3 @@
-load NF_FF_Gens2.sage
 ff = open("rank2data.sage",'r')
 lns = ff.readlines()
 ff.close()
