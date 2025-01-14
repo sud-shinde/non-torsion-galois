@@ -1,9 +1,13 @@
 # non-torsion-galois
 Relevant codes of my paper on non torsion Galois representations attached to elliptic curves
 
-rank2data.sage : contains Weierstrass coefficients of 493291 elliptic curves from LMFDB database
+rank2data.sage : contains Weierstrass coefficients of 493291 elliptic curves from LMFDB database of rank 2
 
-VerifyRank2.sage : verification that every curve from rank2data.sage is indeed of the form given in Theorem 4.3.
+VerifyRank2.sage : verification that every curve from rank2data.sage is indeed of the form given in Theorem 5.1.
+
+rank3data.sage : contains Weierstrass coefficients of 37334 elliptic curves from LMFDB database of rank 3
+
+VerifyRank3.sage : verification that every curve from rank3data.sage is indeed of the form given in Theorem 5.2.
 
 NSUBSG2.m : magma script containing generators of 8 subgroups from Table 1.
 
@@ -11,13 +15,9 @@ CheckGroup2.m : magma scripts for testing
 
 NF_FF_Gens2.sage : The main sagemath script to compute the field Q(E[f]) and the associated Galois image
 
-RandomChecks.sage: List of all curves and scripts to generate random curves and polynomials for each group
-
 ConstructionOfTheAbsoluteDefiningPolynomial.mpl : maple script to compute the degree 8 defining polynomial of Q(E[f])
 
 parametrize_b.mpl : maple script to parametrize b in Equation 4.1
-
-parametrize_b_for_G3.mpl : maple script to parametrize b for group G3 in Equation 4.4
 
 
 Use case:
@@ -36,7 +36,7 @@ Check in Magma :
 
 > load "CheckGroup2.m";
 
-> WhichGroup([[0, 1, 1, 0]]); // should give output 4 for group 4.
+> WhichGroup([[0, 1, 1, 0]]); // should give output 4 for group G_4.
 
 
 
