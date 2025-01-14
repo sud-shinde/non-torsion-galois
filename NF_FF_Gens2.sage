@@ -91,8 +91,3 @@ Given E defined by y^2=x^3+ax+b and polynomial f(x) = x^2+mx+n, this class defin
         for g in mtgns:
             mg.append(flatten(g.list()))
         self.magma_gens = mg  #magma generators of the Galois group of Q(E[f]) over Q.
-    def height_data(self):
-        self.height_matrix = self.gcurve.height_pairing_matrix(self.pts)
-        self.height_matrix_det = self.height_matrix.determinant()
-        self.eigen_vectors = self.height_matrix.change_ring(QQ).right_eigenvectors()
-        self.kernel = self.height_matrix.right_kernel_matrix().change_ring(ZZ)
