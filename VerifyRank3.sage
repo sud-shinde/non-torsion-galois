@@ -1,3 +1,6 @@
+#the file rank3data.sage contains the Weierstrass coefficients of 37334 elliptic curves of rank 3. 
+#The function Process takes the argument l in range(37334) and verifies that the l'th curve in rank3data.sage is indeed on the subfamily from Theorem 5.2
+
 ff = open("rank3data.sage",'r')
 lns = ff.readlines()
 ff.close()
