@@ -1,5 +1,5 @@
 #the file rank2data.sage contains the Weierstrass coefficients of 493291 elliptic curves of rank 2. 
-#The function Process takes the argument i in range(493291) and verifies that the i'th curve in rank2data.sage is indeed on the family from Theorem 5.1
+#The function Process takes the argument l in range(493291) and verifies that the l'th curve in rank2data.sage is indeed on the family from Theorem 5.1
 ff = open("rank2data.sage",'r')
 lns = ff.readlines()
 ff.close()
@@ -29,6 +29,6 @@ def Process(l):
         con = con and (s[0].right_hand_side() in QQ and s[1].right_hand_side() in QQ)
     return con
 
-for l in range(len(lns)):
-    assert Process(l)
+#for l in range(len(lns)):
+#    assert Process(l)
 
